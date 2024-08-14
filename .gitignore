@@ -1,6 +1,10 @@
 # Ignore model files
 models_API/app/*.joblib
 
+# Ignore the models directory
+models/
+
+
 
 # Ignore virtual environment
 venv/
