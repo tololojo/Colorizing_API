@@ -21,6 +21,8 @@ model_paths = {
     "base_model": "app/base_model.joblib"
 }
 
+
+
 # Load models into a dictionary
 models = {name: joblib.load(path) for name, path in model_paths.items()}
 
