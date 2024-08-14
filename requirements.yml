@@ -23,6 +23,9 @@ dependencies:
   ###### Lorenz's Libs ######
   - pyproj
   - folium
+  ###### AWS libs ######
+  - uvicorn
+  
   ###### extras ######
   - scikit-image
   - scikit-learn
