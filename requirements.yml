@@ -3,9 +3,9 @@ channels:
   - conda-forge
   - pytorch
 dependencies:
-  - python
+  - python=3.11
   # - numpy
-  # - pip
+  - pip
   - pandas
   - matplotlib
   # - scikit-image=0.17.2
@@ -25,6 +25,7 @@ dependencies:
   - folium
   ###### AWS libs ######
   - uvicorn
+  - gunicorn
   
   ###### extras ######
   - scikit-image
