@@ -30,5 +30,6 @@ EXPOSE 8000
 # need to use double quote here!
 #CMD ["uvicorn", "app.server:app", "--host", "0.0.0.0", "--port", "8000"]
 #CMD ["gunicorn", "-b", "0.0.0.0:8000", "app.server:app"]
-CMD ["gunicorn", "-b", "0.0.0.0:8000", "app.server:app", "-k", "uvicorn.workers.UvicornWorker"]
+CMD ["gunicorn", "-b", "0.0.0.0:80", "app.server:app", "-k", "uvicorn.workers.UvicornWorker"]
+
 
