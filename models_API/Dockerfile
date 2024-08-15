@@ -14,10 +14,9 @@ RUN micromamba install -y -n base -f /tmp/env.yaml && \
 
 
 # Activate the environment and install pip, gunicorn, and requests
-RUN micromamba run -n base pip install gunicorn requests && \
+RUN micromamba run -n base pip install requests gunicorn && \
     micromamba run -n base gunicorn --version && \
     micromamba run -n base python -c "import requests; print(requests.__version__)"
-
 
 ARG MAMBA_DOCKERFILE_ACTIVATE=1 
 
@@ -27,10 +26,12 @@ WORKDIR /code
 
 ENV PYTHONPATH=/code
 
-EXPOSE 8000
+EXPOSE 80
+
 # need to use double quote here!
 #CMD ["uvicorn", "app.server:app", "--host", "0.0.0.0", "--port", "8000"]
 #CMD ["gunicorn", "-b", "0.0.0.0:8000", "app.server:app"]
-CMD ["gunicorn", "-b", "0.0.0.0:80", "app.server:app", "-k", "uvicorn.workers.UvicornWorker"]
+#CMD ["gunicorn", "-b", "0.0.0.0:80", "app.server:app", "-k", "uvicorn.workers.UvicornWorker"]
+CMD ["micromamba", "run", "-n", "base", "gunicorn", "-b", "0.0.0.0:80", "app.server:app", "-k", "uvicorn.workers.UvicornWorker"]
 
 
