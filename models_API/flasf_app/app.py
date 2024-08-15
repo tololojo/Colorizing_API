@@ -4,7 +4,9 @@ import requests
 app = Flask(__name__)
 
 # Set the FastAPI URL
-FASTAPI_URL = 'http://localhost:8000/predict'
+#FASTAPI_URL = 'http://localhost:8000/predict'
+FASTAPI_URL = 'http://localhost/predict'
+
 
 @app.route('/', methods=['GET', 'POST'])
 def index():

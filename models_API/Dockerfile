@@ -32,6 +32,7 @@ EXPOSE 80
 #CMD ["uvicorn", "app.server:app", "--host", "0.0.0.0", "--port", "8000"]
 #CMD ["gunicorn", "-b", "0.0.0.0:8000", "app.server:app"]
 #CMD ["gunicorn", "-b", "0.0.0.0:80", "app.server:app", "-k", "uvicorn.workers.UvicornWorker"]
-CMD ["micromamba", "run", "-n", "base", "gunicorn", "-b", "0.0.0.0:80", "app.server:app", "-k", "uvicorn.workers.UvicornWorker"]
+CMD ["micromamba", "run", "-n", "base", "gunicorn", "-b", "0.0.0.0:80", "models_API.app.server:app", "-k", "uvicorn.workers.UvicornWorker"]
+
 
 

@@ -11,7 +11,7 @@ dependencies:
   - matplotlib
   # - scikit-image=0.17.2
   # - scikit-learn=0.24.2
-  - pytorch
+  # - pytorch
   - torchvision
   - tensorflow
   # - opencv=3.4.1
