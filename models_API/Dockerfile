@@ -13,9 +13,10 @@ RUN micromamba install -y -n base -f /tmp/env.yaml && \
     micromamba clean --all --yes
 
 
-# Activate the environment and install pip and gunicorn
-RUN micromamba run -n base pip install gunicorn && \
-    micromamba run -n base gunicorn --version
+# Activate the environment and install pip, gunicorn, and requests
+RUN micromamba run -n base pip install gunicorn requests && \
+    micromamba run -n base gunicorn --version && \
+    micromamba run -n base python -c "import requests; print(requests.__version__)"
 
 
 ARG MAMBA_DOCKERFILE_ACTIVATE=1 
